@@ -20,8 +20,7 @@ public class MySamplesApp {
         RestConnection<IClientRestService> restServer = RestConnection.consume("http://localhost",
                                                                                8080,
                                                                                "/mysamples",
-                                                                               IClientRestService.class,
-                                                                               null);
+                                                                               IClientRestService.class);
         IClientRestService service = restServer.getService();
         Answer             answer  = service.getAnswer();
     }
