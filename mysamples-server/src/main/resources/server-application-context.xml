@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean class="de.ecr.mysamples.server._app.MySamplesServerApp" />
+
+    <bean class="de.mydata.rest.server.JettyRestServer">
+        <constructor-arg name="port" value="8080"/>
+        <constructor-arg name="sessions" value="true"/>
+        <constructor-arg name="servicePackageNames">
+            <list>
+                <value>de.ecr.mysamples.server.services</value>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
